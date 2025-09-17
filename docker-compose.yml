@@ -1,0 +1,16 @@
+services:
+  rest-app:
+    build: ./rest-app
+    container_name: rest-app
+    ports:
+      - "8081:8080"
+
+  jsf-app:
+    build: ./jsf-app
+    container_name: jsf-app
+    environment:
+      - REST_BASE_URL=http://rest-app:8080/rest-app/api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - rest-app

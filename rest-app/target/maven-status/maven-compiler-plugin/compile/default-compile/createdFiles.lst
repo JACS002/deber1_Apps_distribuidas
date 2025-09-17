@@ -1,2 +1,2 @@
-edu\usfq\cmp5001\HelloResource.class
-edu\usfq\cmp5001\JaxrsActivator.class
+com/usfq/rest/HelloResource.class
+com/usfq/rest/RestApplication.class

@@ -1,41 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
-  <groupId>edu.usfq.cmp5001</groupId>
-  <artifactId>jsf-app</artifactId> <!-- cambia a jsf-app en el otro -->
+  <groupId>com.usfq</groupId>
+  <artifactId>jsf-app</artifactId>
   <version>1.0.0</version>
   <packaging>war</packaging>
 
   <properties>
-    <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jakarta.version>10.0.0</jakarta.version>
+    <jakarta.ee.web.version>10.0.0</jakarta.ee.web.version>
   </properties>
 
   <dependencies>
-    <!-- Jakarta EE API (WildFly la provee) -->
     <dependency>
       <groupId>jakarta.platform</groupId>
-      <artifactId>jakarta.jakartaee-api</artifactId>
-      <version>${jakarta.version}</version>
+      <artifactId>jakarta.jakartaee-web-api</artifactId>
+      <version>${jakarta.ee.web.version}</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
 
   <build>
-    <finalName>${project.artifactId}</finalName>
+    <finalName>jsf-app</finalName>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <release>21</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.4.0</version>
-        <configuration>
-          <failOnMissingWebXml>false</failOnMissingWebXml>
-        </configuration>
       </plugin>
     </plugins>
   </build>
 </project>
-

@@ -1,7 +1,8 @@
-package edu.usfq.cmp5001;
+package com.usfq.rest;
 
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
 
 @ApplicationPath("/api")
-public class JaxrsActivator extends Application { }
+public class RestApplication extends Application {
+}
